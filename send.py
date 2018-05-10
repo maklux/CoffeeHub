@@ -24,10 +24,13 @@ MESSAGE_TIMEOUT = 10000
 
 # Fetch data from sensors
 def read_temp(id):
-    with open("/sys/bus/w1/devices/" + id + "/w1_slave") as f:
-        temp = f.read()
-    temp = temp.split("\n")[1].split(" ")[9]
-    temp = float(temp[2:]) / 1000
+    try:
+        with open("/sys/bus/w1/devices/" + id + "/w1_slave") as f:
+            temp = f.read()
+        temp = temp.split("\n")[1].split(" ")[9]
+        temp = float(temp[2:]) / 1000
+    except OSError:
+        temp = 0.0
     return temp
       
 
