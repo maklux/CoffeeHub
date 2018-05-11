@@ -7,10 +7,11 @@ from gpiozero import LED
 from azure.servicebus import ServiceBusService
 
 # Connection strings for Event Hub
-key_name = 'mysecretkeyname'
-key_value = 'mysecretkeyvalue'
-service_namespace = 'coffeeevents'
-eventhub_name = 'pavoni'
+secrets = json.load(open(secrets.json))
+key_name = secrets['key_name']
+key_value = secrets['key_value']
+service_namespace = secrets['service_namespace'] #'coffeeevents'
+eventhub_name = secrets['eventhub_name'] #'pavoni'
 
 # Establish connection to Event Hub
 host = socket.gethostname()
