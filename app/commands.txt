@@ -1,0 +1,13 @@
+The following list of commands can be used to deploy the docker image locally
+and to the Azure Container Registry.
+
+# Build image
+docker build -t coffee .
+
+# Run container locally
+docker run -d -p 8000:8000 coffee:latest
+
+# Deploy image to azure registry
+docker login connectedcoffeeregistry.azurecr.io -u xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -p myPassword
+docker tag coffee connectedcoffeeregistry.azurecr.io/coffee
+docker push connectedcoffeeregistry.azurecr.io/coffee
