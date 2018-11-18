@@ -7,6 +7,10 @@
 ### Software Setup 
 >- Raspbian Lite 
 >- Python 3.5 
+>- Flask
+>- rpi_rf
+>- 433Utils
+>- WiringPi
 
 ### Python Requirements
 > Install azure-servicebus

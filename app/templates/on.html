@@ -4,12 +4,12 @@
   {{ super() }}
 {% endblock %}
 {% block content %}
-  <h1>Coffee Hub</h1>
+  <h1>MAK CoffeeHub</h1>
   <form action="/off" method="POST">
     <div class="form-group">
-    <label for="namefield">{{timer}}</label>
+    <!-- <label for="namefield">{{timer}}</label> -->
     <!-- <input type="text" class="form-control" id="namefield" name="name" aria-describedby="emailHelp" placeholder="Email"> -->
-    <small id="text" class="form-text text-muted">The coffee machine is currently running, with the following timer.</small>
+    <small id="text" class="form-text text-muted">{{message}}</small>
   </div>
   <!-- <div class="form-group">
     <label for="emailfield">Email address</label>
@@ -21,6 +21,6 @@
     <input type="number" min="0" step="1" class="form-control" id="partyfield" name="partysize" aria-describedby="partyHelp" value="1">
     <small id="partyHelp" class="form-text text-muted"> Tell us how many people will be attending.</small>
   </div> -->
-  <button type="submit" class="btn btn-default">Turn Off</button>
+  <button type="submit" class="btn btn-default">{{action}}</button>
   </form>
 {% endblock %}
