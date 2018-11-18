@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Coffee Hub{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <h1>CoffeeHub</h1>
+  <form action="/pipe">
+    <div class="form-group">
+        <small id="text" class="form-text text-muted">{{message}}</small>
+    </div>
+    {% if action == 'Turn On' %}
+        <button type="submit" class="btn btn-default" name="action" value="on">{{action}}</button>
+    {% endif %}
+    {% if action == 'Turn Off' %}
+        <button type="submit" class="btn btn-default" name="action" value="off">{{action}}</button>
+    {% endif %}
+  </form>
+{% endblock %}
